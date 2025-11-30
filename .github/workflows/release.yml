@@ -71,6 +71,13 @@ jobs:
           name: all-built-jars
           path: versions
 
+      - name: debug List contents of versions
+        run: |
+          ls -R /
+          echo "=== Checking for JARs in specific version ==="
+          ls -la "versions/${{ matrix.minecraft_version }}/build/libs/" 2>/dev/null || echo "Directory not found or empty"
+          ls -la "${{ matrix.minecraft_version }}/build/libs/" 2>/dev/null || echo "Directory not found or empty"
+
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
           name: v${{ steps.version.outputs.release }} for ${{ matrix.minecraft_version }}
