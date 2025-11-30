@@ -42,7 +42,7 @@ jobs:
           retention-days: 1
 
   publish:
-    name: Publish for ${{ matrix.minecraft.version }}
+    name: Publish for ${{ matrix.minecraft_version }}
     needs: build-all
     runs-on: ubuntu-latest
     strategy:
@@ -69,7 +69,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: all-built-jars
-          path: modules
+          path: versions
 
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
@@ -83,8 +83,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
           files: |
-            versions/${{ matrix.minecraft_version }}/build/libs/!(*-@(dev|sources|javadoc)).jar
-            versions/${{ matrix.minecraft_version }}/build/libs/*-@(dev|sources|javadoc).jar
+            ${{ matrix.minecraft_version }}/build/libs/!(*-@(dev|sources|javadoc)).jar
+            ${{ matrix.minecraft_version }}/build/libs/*-@(dev|sources|javadoc).jar
 
           retry-attempts: 2
           retry-delay: 10000
