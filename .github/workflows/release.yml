@@ -69,11 +69,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: all-built-jars
-          path: versions
+          path: versions/
 
       - name: debug List contents of versions
         run: |
-          ls -R /
+          ls -R versions/
           echo "=== Checking for JARs in specific version ==="
           ls -la "versions/${{ matrix.minecraft_version }}/build/libs/" 2>/dev/null || echo "Directory not found or empty"
           ls -la "${{ matrix.minecraft_version }}/build/libs/" 2>/dev/null || echo "Directory not found or empty"
