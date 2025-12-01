@@ -6,15 +6,23 @@ import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
+
 import org.jetbrains.annotations.ApiStatus;
 
 @ApiStatus.Internal
 @Config(name = "expandedenderchest")
 public class ExpandedEnderchestConfig implements ConfigData {
+
 	@ConfigEntry.Gui.Tooltip(count = 2)
 	@ConfigEntry.Gui.RequiresRestart
 	@Comment("Enables or disables the mod")
 	public boolean enabled = true;
+
+	@ConfigEntry.BoundedDiscrete(min = 1, max = 6)
+	@ConfigEntry.Gui.Tooltip(count = 4)
+	@ConfigEntry.Gui.RequiresRestart
+	@Comment("Enderchest rows")
+	public int rowCount = 6;
 
 	@ConfigEntry.Gui.Excluded
 	private static boolean initialized = false;

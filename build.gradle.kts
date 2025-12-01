@@ -68,14 +68,3 @@ tasks.jar {
         rename { "${it}_${project.base.archivesName}" }
     }
 }
-
-//publishing {
-//    publications {
-//        create<MavenPublication>("mavenJava") {
-//            artifactId = project.property("archives_base_name") as String
-//            from(components["java"])
-//        }
-//    }
-//
-//    repositories {}
-//}

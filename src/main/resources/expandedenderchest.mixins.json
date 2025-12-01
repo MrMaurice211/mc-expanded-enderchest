@@ -9,7 +9,8 @@
 	},
 	"mixins": [
 		"EnderChestBlockMixin",
-		"PlayerEntityMixin",
-		"SimpleInventoryAccessor"
+		"PlayerEnderChestContainerMixin",
+		"SlotArgumentMixin",
+		"SlotRangesMixin"
 	]
 }

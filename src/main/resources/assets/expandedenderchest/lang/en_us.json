@@ -2,5 +2,10 @@
 	"text.autoconfig.expandedenderchest.title": "Expanded Enderchest",
 	"text.autoconfig.expandedenderchest.option.enabled": "Enabled",
 	"text.autoconfig.expandedenderchest.option.enabled.@Tooltip[0]": "§aEnables§r or§c disables§r the mod",
-	"text.autoconfig.expandedenderchest.option.enabled.@Tooltip[1]": "§7§o* Requires restart"
+	"text.autoconfig.expandedenderchest.option.enabled.@Tooltip[1]": "§7§o* Requires restart",
+	"text.autoconfig.expandedenderchest.option.rowCount": "Enderchest rows",
+	"text.autoconfig.expandedenderchest.option.rowCount.@Tooltip[0]": "§dEnderchest §rrows",
+	"text.autoconfig.expandedenderchest.option.rowCount.@Tooltip[1]": "§7§o* Requires restart",
+	"text.autoconfig.expandedenderchest.option.rowCount.@Tooltip[2]": "§4§l! WARNING !",
+	"text.autoconfig.expandedenderchest.option.rowCount.@Tooltip[3]": "§cChanging this size may cause item lose"
 }
