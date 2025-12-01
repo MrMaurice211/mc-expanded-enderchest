@@ -79,7 +79,7 @@ jobs:
 
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
-          name: v${{ steps.version.outputs.release }} for ${{ matrix.minecraft_version }}
+          name: v${{ steps.version.outputs.release }}
           version: ${{ steps.version.outputs.release }}+${{ matrix.minecraft_version }}
           version-type: release
 
