@@ -21,8 +21,7 @@ public abstract class SlotRangesMixin {
 	private static void addSlotRange(List<SlotRange> list, String string, int i, int j) {
 	}
 
-	//? if >=1.20.5 {
-	/^@Redirect(
+	@Redirect(
 		method = "<clinit>",
 		at = @At(
 			value = "INVOKE",
@@ -47,5 +46,4 @@ public abstract class SlotRangesMixin {
 	}
 
 }
-^///?}
-*/
+*///?}

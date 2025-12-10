@@ -50,7 +50,8 @@ tasks.processResources {
         expand(
             "version" to project.version,
             "version_range" to versionRange,
-            "loader_version" to project.property("loader_version")
+            "loader_version" to project.property("loader_version"),
+            "mixin" to (project.findProperty("mixin") ?: "expandedenderchest.mixins.json")
         )
     }
 

@@ -21,7 +21,7 @@
 		]
 	},
 	"mixins": [
-		"expandedenderchest.mixins.json"
+		"${mixin}"
 	],
 	"includes": {
 		"cloth-config": "*"

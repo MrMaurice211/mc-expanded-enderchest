@@ -1,20 +1,20 @@
 package io.chaws.expandedenderchest.mixin;
 
 //? if <1.20.5 {
-import java.util.Map;
-import java.util.function.Consumer;
-
 import com.mojang.brigadier.arguments.ArgumentType;
 import io.chaws.expandedenderchest.config.ExpandedEnderchestConfig;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import net.minecraft.commands.arguments.SlotArgument;
 
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Redirect;
+
+import java.util.Map;
+import java.util.function.Consumer;
+
 @Mixin(SlotArgument.class)
 public abstract class SlotArgumentMixin implements ArgumentType<Integer> {
-
 
 	@Redirect(
 		method = "<clinit>",

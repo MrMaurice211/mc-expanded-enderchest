@@ -39,4 +39,5 @@ public class ExpandedEnderchestConfig implements ConfigData {
 		initialize();
 		return AutoConfig.getConfigHolder(ExpandedEnderchestConfig.class).getConfig();
 	}
+	
 }
