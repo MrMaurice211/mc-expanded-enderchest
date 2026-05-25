@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "1.16-SNAPSHOT"
+    id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
     id("dev.kikugie.stonecutter")
 }
 
@@ -11,10 +11,8 @@ base {
     version = "${project.property("mod_version") as String}+${minecraft}"
 }
 
-val requiredJava = when {
-    stonecutter.eval(stonecutter.current.version, ">=1.20.5") -> JavaVersion.VERSION_21
-    else -> JavaVersion.VERSION_17
-}
+val requiredJava = JavaVersion.VERSION_25
+
 java {
     withSourcesJar()
     targetCompatibility = requiredJava
@@ -28,13 +26,11 @@ repositories {
 
 dependencies {
     minecraft("com.mojang:minecraft:${minecraft}")
-    mappings(loom.officialMojangMappings())
-    modImplementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
+    implementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
+    implementation("net.fabricmc.fabric-api:fabric-api:${project.property("modern_fabric_version")}")
 
-    modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
-
-    modApi("com.terraformersmc:modmenu:16.0.0-rc.1")
-    modImplementation("me.shedaniel.cloth:cloth-config-fabric:20.0.149") {
+    api("com.terraformersmc:modmenu:18.0.0-beta.1")
+    implementation("me.shedaniel.cloth:cloth-config-fabric:26.1.154") {
         exclude(group = "net.fabricmc.fabric-api")
     }
 }

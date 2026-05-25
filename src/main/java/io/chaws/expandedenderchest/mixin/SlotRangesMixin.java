@@ -25,7 +25,11 @@ public abstract class SlotRangesMixin {
 		method = "<clinit>",
 		at = @At(
 			value = "INVOKE",
+			//? if <26.1 {
 			target = "Lnet/minecraft/Util;make(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/Object;"
+			//? } else {
+			/^target = "Lnet/minecraft/util/Util;make(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/Object;"
+			^///? }
 		)
 	)
 	private static Object redirectUtilMake(Object list, Consumer<Object> consumer) {
