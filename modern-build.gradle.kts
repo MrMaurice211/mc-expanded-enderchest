@@ -53,8 +53,10 @@ tasks.processResources {
     val mixinJava = "JAVA_${requiredJava.majorVersion}"
     val mixinName = if (sc.current.parsed < "1.20.5") "SlotArgumentMixin" else "SlotRangesMixin"
     filesMatching(listOf("*.mixins.json")) {
-        expand("java" to mixinJava)
-        expand("slotMixin" to mixinName)
+        expand(
+            "java" to mixinJava,
+            "slotMixin" to mixinName
+        )
     }
 }
 
