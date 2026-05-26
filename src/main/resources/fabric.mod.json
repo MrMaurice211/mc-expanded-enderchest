@@ -17,18 +17,16 @@
 	"environment": "*",
 	"entrypoints": {
 		"modmenu": [
-			"io.chaws.expandedenderchest.client.config.ModMenuIntegration"
+			"io.chaws.expandedenderchest.config.client.ModMenuIntegration"
 		]
 	},
 	"mixins": [
-		"${mixin}"
+		"expandedenderchest.mixins.json"
 	],
-	"includes": {
-		"cloth-config": "*"
-	},
 	"depends": {
 		"fabricloader": ">=${loader_version}",
 		"minecraft": "${version_range}",
+		"cloth-config": "*",
 		"java": ">=17"
 	},
 	"suggests": {

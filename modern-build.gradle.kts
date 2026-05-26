@@ -14,7 +14,6 @@ base {
 val requiredJava = JavaVersion.VERSION_25
 
 java {
-    withSourcesJar()
     targetCompatibility = requiredJava
     sourceCompatibility = requiredJava
 }
@@ -47,13 +46,16 @@ tasks.processResources {
         expand(
             "version" to project.version,
             "version_range" to versionRange,
-            "loader_version" to (project.property("loader_version") ?: "0.19.2"),
-            "mixin" to (project.findProperty("mixin") ?: "expandedenderchest.mixins.json")
+            "loader_version" to (project.property("loader_version") ?: "0.19.2")
         )
     }
 
     val mixinJava = "JAVA_${requiredJava.majorVersion}"
-    filesMatching(listOf("*.mixins.json")) { expand("java" to mixinJava) }
+    val mixinName = if (sc.current.parsed < "1.20.5") "SlotArgumentMixin" else "SlotRangesMixin"
+    filesMatching(listOf("*.mixins.json")) {
+        expand("java" to mixinJava)
+        expand("slotMixin" to mixinName)
+    }
 }
 
 tasks.withType<JavaCompile>().configureEach {

@@ -2,14 +2,14 @@
 	"required": true,
 	"minVersion": "0.8",
 	"package": "io.chaws.expandedenderchest.mixin",
-	"compatibilityLevel": "JAVA_21",
+	"compatibilityLevel": "${java}",
 	"plugin": "io.chaws.expandedenderchest.ExpandedEnderchestMixinPlugin",
 	"injectors": {
 		"defaultRequire": 1
 	},
 	"mixins": [
-		"EnderChestBlockMixin",
+		"ChestMenuMixin",
 		"PlayerEnderChestContainerMixin",
-		"SlotRangesMixin"
+		"${slotMixin}"
 	]
 }
